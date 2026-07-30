@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="pt-PT" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocaloid Space - O Universo da Síntese Vocal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        miku: '#39C5BB',
+                        rinlen: '#FFD700',
+                        luka: '#FFB7C5',
+                        kaito: '#0066CC',
+                        meiko: '#E60012',
+                        cyberdark: '#0B0F19',
+                        cybercard: '#161F30'
+                    },
+                    fontFamily: {
+                        sans: ['Quicksand', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <!-- FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #0B0F19;
+            color: #E2E8F0;
+        }
+        .tech-font {
+            font-family: 'Share Tech Mono', monospace;
+        }
+        /* Efeito de brilho Neon */
+        .neon-glow-miku {
+            box-shadow: 0 0 15px rgba(57, 197, 187, 0.4);
+        }
+        .neon-glow-pink {
+            box-shadow: 0 0 15px rgba(255, 183, 197, 0.4);
+        }
+        .neon-border-miku {
+            border-color: rgba(57, 197, 187, 0.5);
+        }
+        .neon-text-miku {
+            text-shadow: 0 0 8px rgba(57, 197, 187, 0.6);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0B0F19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #39C5BB;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Navegação / Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-cyberdark/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-miku to-blue-500 flex items-center justify-center text-cyberdark font-bold text-xl neon-glow-miku">
+                    V
+                </div>
+                <span class="text-xl font-bold tracking-wider text-white">VOCALOID<span class="text-miku font-light">SPACE</span></span>
+            </div>
+            
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-miku transition-colors">Início</a>
+                <a href="#sobre" class="hover:text-miku transition-colors">O que é?</a>
+                <a href="#vocaloids" class="hover:text-miku transition-colors">Personagens</a>
+                <a href="#synth" class="hover:text-miku transition-colors">Miku-Synth</a>
+                <a href="#player" class="hover:text-miku transition-colors">Músicas</a>
+                <a href="#quiz" class="hover:text-miku transition-colors">Quiz</a>
+            </nav>
+
+            <!-- Botão Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden text-white hover:text-miku focus:outline-none">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menu Lateral Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-cyberdark/95 border-b border-slate-800 px-4 pt-2 pb-4 space-y-3 transition-all duration-300">
+            <a href="#home" class="block py-2 text-slate-300 hover:text-miku">Início</a>
+            <a href="#sobre" class="block py-2 text-slate-300 hover:text-miku">O que é?</a>
+            <a href="#vocaloids" class="block py-2 text-slate-300 hover:text-miku">Personagens</a>
+            <a href="#synth" class="block py-2 text-slate-300 hover:text-miku">Miku-Synth</a>
+            <a href="#player" class="block py-2 text-slate-300 hover:text-miku">Músicas</a>
+            <a href="#quiz" class="block py-2 text-slate-300 hover:text-miku">Quiz</a>
+        </div>
+    </header>
+
+    <!-- Secção Hero -->
+    <section id="home" class="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-b from-slate-950 via-cyberdark to-slate-950">
+        <!-- Partículas de fundo (Design abstrato) -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-miku rounded-full filter blur-[120px] animate-pulse"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-luka rounded-full filter blur-[120px] animate-pulse" style="animation-delay: 2s;"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-miku/10 border border-miku/30 text-miku text-xs sm:text-sm font-semibold tracking-wider uppercase">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-miku opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-miku"></span>
+                    </span>
+                    <span>A Revolução da Música Virtual</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-none">
+                    Vozes Digitais,<br>
+                    <span class="bg-gradient-to-r from-miku via-teal-400 to-pink-400 bg-clip-text text-transparent">Emoções Reais.</span>
+                </h1>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto lg:mx-0">
+                    Explora o ecossistema tecnológico e artístico que transformou sintetizadores de voz em ícones da cultura pop global e estrelas de concertos holográficos.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                    <a href="#synth" class="px-8 py-4 bg-miku hover:bg-miku/90 text-cyberdark font-bold rounded-xl transition-all shadow-lg hover:shadow-miku/20 text-center">
+                        <i class="fa-solid fa-wand-magic-sparkles mr-2"></i>Testar Sintetizador
+                    </a>
+                    <a href="#vocaloids" class="px-8 py-4 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-xl border border-slate-700 transition-all text-center">
+                        Ver Personagens
+                    </a>
+                </div>
+            </div>
+
+            <!-- Ilustração Hero Interativa -->
+            <div class="lg:col-span-5 flex justify-center relative">
+                <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full border-2 border-dashed border-miku/30 flex items-center justify-center animate-[spin_40s_linear_infinite] absolute pointer-events-none"></div>
+                <div class="w-60 h-60 sm:w-80 sm:h-80 rounded-full border border-pink-500/20 flex items-center justify-center animate-[spin_20s_linear_infinite_reverse] absolute pointer-events-none"></div>
+                
+                <!-- Avatar da Hatsune Miku em Arte Vectorial Fluida -->
+                <div class="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl bg-cybercard border-2 border-miku/50 overflow-hidden neon-glow-miku flex flex-col justify-between p-6 transform hover:scale-105 transition-transform duration-300">
+                    <div class="flex justify-between items-start">
+                        <span class="tech-font text-xs text-miku">ID: CV01 // MODEL</span>
+                        <span class="text-xs bg-red-500/20 text-red-400 px-2 py-0.5 rounded border border-red-500/30 font-bold">ONLINE</span>
+                    </div>
+                    
+                    <!-- Desenho SVG Estilizado da Miku (Cabelos icónicos e fones) -->
+                    <div class="w-full flex justify-center py-4">
+                        <svg class="w-32 h-32 text-miku" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Gravata e Colarinho -->
+                            <path d="M42 75 L50 90 L58 75 Z" fill="#E60012" />
+                            <path d="M38 72 L50 78 L62 72 L50 68 Z" fill="#313D4F" />
+                            <!-- Cabelo - Ganchos vermehos -->
+                            <rect x="25" y="30" width="8" height="8" rx="2" fill="#E60012" />
+                            <rect x="67" y="30" width="8" height="8" rx="2" fill="#E60012" />
+                            <!-- Longos totós esvoaçantes -->
+                            <path d="M26 34 C10 40 5 65 15 90 C12 75 18 55 27 38 Z" fill="#39C5BB" opacity="0.9" />
+                            <path d="M74 34 C90 40 95 65 85 90 C88 75 82 55 73 38 Z" fill="#39C5BB" opacity="0.9" />
+                            <!-- Rosto -->
+                            <path d="M32 40 C32 25 68 25 68 40 C68 58 60 66 50 66 C40 66 32 58 32 40 Z" fill="#FFE5D9" />
+                            <!-- Fone de Ouvido de Cyber Estrela -->
+                            <path d="M30 35 C30 25 70 25 70 35" stroke="#313D4F" stroke-width="4" />
+                            <rect x="26" y="34" width="6" height="14" rx="2" fill="#313D4F" />
+                            <rect x="68" y="34" width="6" height="14" rx="2" fill="#313D4F" />
+                            <!-- Cabelo - Franja frontal -->
+                            <path d="M32 36 C42 30 50 36 50 36 C50 36 58 30 68 36 C64 45 60 48 60 48 L50 42 L40 48 C40 48 36 45 32 36 Z" fill="#39C5BB" />
+                            <!-- Olhos cianos doces -->
+                            <ellipse cx="43" cy="48" rx="3" ry="5" fill="#39C5BB" />
+                            <ellipse cx="57" cy="48" rx="3" ry="5" fill="#39C5BB" />
+                            <circle cx="44" cy="46" r="1" fill="white" />
+                            <circle cx="58" cy="46" r="1" fill="white" />
+                            <!-- Sorriso -->
+                            <path d="M47 56 Q50 59 53 56" stroke="#E60012" stroke-width="1.5" stroke-linecap="round" />
+                        </svg>
+                    </div>
+
+                    <div class="space-y-1 text-center">
+                        <h3 class="font-bold text-lg text-white">Hatsune Miku</h3>
+                        <p class="text-xs text-slate-400">Primeira estrela pop holográfica</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Sobre o Vocaloid -->
+    <section id="sobre" class="py-20 bg-slate-900 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold text-white">O que é a Tecnologia Vocaloid?</h2>
+                <div class="h-1 w-20 bg-miku mx-auto mt-4 rounded"></div>
+                <p class="text-slate-400 mt-4 text-lg">
+                    Desenvolvido pela lendária Yamaha Corporation, o Vocaloid permite aos compositores criar linhas de canto reais simplesmente digitando letras e notas musicais.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-cybercard p-8 rounded-2xl border border-slate-800 hover:border-miku/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-miku/10 text-miku flex items-center justify-center text-xl mb-6 group-hover:bg-miku group-hover:text-cyberdark transition-all">
+                        <i class="fa-solid fa-microphone-lines"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Síntese de Voz Humana</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        A tecnologia grava pedaços fonéticos de atores de voz reais (sílabas, transições) e reconstrói-os digitalmente para permitir qualquer combinação lírica.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-cybercard p-8 rounded-2xl border border-slate-800 hover:border-pink-500/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-400 flex items-center justify-center text-xl mb-6 group-hover:bg-pink-500 group-hover:text-cyberdark transition-all">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Liberdade Criativa</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Qualquer pessoa no seu quarto pode produzir uma canção com qualidade de rádio profissional sem precisar de contratar um cantor físico ou estúdios dispendiosos.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-cybercard p-8 rounded-2xl border border-slate-800 hover:border-rinlen/30 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-rinlen/10 text-rinlen flex items-center justify-center text-xl mb-6 group-hover:bg-rinlen group-hover:text-cyberdark transition-all">
+                        <i class="fa-solid fa-users-viewfinder"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Ecossistema Colaborativo</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Ilustradores, animadores e músicos colaboram livremente, criando vídeos musicais icónicos que alcançam centenas de milhões de visualizações na Internet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Personagens (Banco de Dados Dinâmico) -->
+    <section id="vocaloids" class="py-20 bg-cyberdark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Elenco Principal</h2>
+                    <p class="text-slate-400 mt-2">Explora as vozes e as identidades visuais de maior sucesso.</p>
+                </div>
+                <!-- Filtros Dinâmicos -->
+                <div class="flex flex-wrap gap-2 mt-6 md:mt-0">
+                    <button onclick="filterVocaloids('all')" class="filter-btn active px-4 py-2 text-xs font-semibold rounded-lg bg-miku text-cyberdark transition-all">Todos</button>
+                    <button onclick="filterVocaloids('crypton')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Crypton</button>
+                    <button onclick="filterVocaloids('internet')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Internet Co.</button>
+                    <button onclick="filterVocaloids('vocaloid2')" class="filter-btn px-4 py-2 text-xs font-semibold rounded-lg bg-slate-800 text-slate-300 hover:bg-slate-700 transition-all">Vocaloid 2</button>
+                </div>
+            </div>
+
+            <!-- Grelha de Personagens -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8" id="characters-grid">
+                <!-- Hatsune Miku Card -->
+                <div class="vocaloid-card bg-cybercard rounded-2xl overflow-hidden border border-slate-800 hover:border-miku/40 transition-all duration-300 flex flex-col justify-between" data-company="crypton" data-generation="vocaloid2">
+                    <div class="h-48 bg-gradient-to-br from-miku/20 to-teal-950 p-6 flex items-center justify-center relative">
+                        <div class="absolute top-4 right-4 bg-miku/10 text-miku text-[10px] font-bold px-2 py-0.5 rounded border border-miku/30">CV01</div>
+                        <!-- Avatar Miku -->
+                        <div class="w-28 h-28 rounded-full bg-slate-900 border-2 border-miku flex items-center justify-center overflow-hidden">
+                            <span class="text-4xl text-miku font-bold">Miku</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Hatsune Miku</h3>
+                            <p class="text-xs text-miku font-semibold uppercase tracking-wider mt-1">Hatsune Miku</p>
+                            <p class="text-slate-400 text-sm mt-3">A Vocaloid mais famosa do mundo, conhecida pelas suas longas caudas de cabelo verde-azuladas e tom de voz pop enérgico.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between text-xs text-slate-400">
+                            <span>Idade: 16 anos</span>
+                            <span>Altura: 1.58m</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kagamine Rin/Len Card -->
+                <div class="vocaloid-card bg-cybercard rounded-2xl overflow-hidden border border-slate-800 hover:border-rinlen/40 transition-all duration-300 flex flex-col justify-between" data-company="crypton" data-generation="vocaloid2">
+                    <div class="h-48 bg-gradient-to-br from-rinlen/20 to-yellow-950 p-6 flex items-center justify-center relative">
+                        <div class="absolute top-4 right-4 bg-rinlen/10 text-rinlen text-[10px] font-bold px-2 py-0.5 rounded border border-rinlen/30">CV02</div>
+                        <!-- Avatar Rin/Len -->
+                        <div class="w-28 h-28 rounded-full bg-slate-900 border-2 border-rinlen flex items-center justify-center overflow-hidden">
+                            <span class="text-4xl text-rinlen font-bold">R/L</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Kagamine Rin & Len</h3>
+                            <p class="text-xs text-rinlen font-semibold uppercase tracking-wider mt-1">Kagamine Rin / Len</p>
+                            <p class="text-slate-400 text-sm mt-3">Gêmeos de imagem ou "reflexos no espelho", compostos por uma poderosa voz feminina (Rin) e uma expressiva voz masculina (Len).</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between text-xs text-slate-400">
+                            <span>Idade: 14 anos</span>
+                            <span>Altura: 1.52m / 1.56m</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Megurine Luka Card -->
+                <div class="vocaloid-card bg-cybercard rounded-2xl overflow-hidden border border-slate-800 hover:border-luka/40 transition-all duration-300 flex flex-col justify-between" data-company="crypton" data-generation="vocaloid2">
+                    <div class="h-48 bg-gradient-to-br from-luka/20 to-pink-950 p-6 flex items-center justify-center relative">
+                        <div class="absolute top-4 right-4 bg-luka/10 text-luka text-[10px] font-bold px-2 py-0.5 rounded border border-luka/30">CV03</div>
+                        <!-- Avatar Luka -->
+                        <div class="w-28 h-28 rounded-full bg-slate-900 border-2 border-luka flex items-center justify-center overflow-hidden">
+                            <span class="text-4xl text-luka font-bold">Luka</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Megurine Luka</h3>
+                            <p class="text-xs text-luka font-semibold uppercase tracking-wider mt-1">Megurine Luka</p>
+                            <p class="text-slate-400 text-sm mt-3">A primeira Vocaloid bilingue nativa (Japonês e Inglês). Possui um timbre mais maduro, elegante e sofisticado.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between text-xs text-slate-400">
+                            <span>Idade: 20 anos</span>
+                            <span>Altura: 1.62m</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GUMI Card -->
+                <div class="vocaloid-card bg-cybercard rounded-2xl overflow-hidden border border-slate-800 hover:border-green-500/40 transition-all duration-300 flex flex-col justify-between" data-company="internet" data-generation="vocaloid2">
+                    <div class="h-48 bg-gradient-to-br from-green-500/20 to-emerald-950 p-6 flex items-center justify-center relative">
+                        <div class="absolute top-4 right-4 bg-green-500/10 text-green-400 text-[10px] font-bold px-2 py-0.5 rounded border border-green-500/30">V2</div>
+                        <!-- Avatar GUMI -->
+                        <div class="w-28 h-28 rounded-full bg-slate-900 border-2 border-green-500 flex items-center justify-center overflow-hidden">
+                            <span class="text-4xl text-green-500 font-bold">GUMI</span>
+                        </div>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Megpoid (Gumi)</h3>
+                            <p class="text-xs text-green-400 font-semibold uppercase tracking-wider mt-1">Gumi Megpoid</p>
+                            <p class="text-slate-400 text-sm mt-3">Uma das vozes mais realistas e flexíveis do motor de som Vocaloid, extremamente aclamada por produtores de rock eletrónico.</p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-slate-800 flex justify-between text-xs text-slate-400">
+                            <span>Idade: N/A</span>
+                            <span>Altura: N/A</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Miku-Synth (Brinquedo Interativo / Sintetizador de Voz Web Audio) -->
+    <section id="synth" class="py-20 bg-slate-950 relative overflow-hidden">
+        <!-- Detalhe cibernético de fundo -->
+        <div class="absolute top-0 right-0 w-80 h-80 bg-miku/5 rounded-full filter blur-[100px]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-miku text-xs sm:text-sm font-semibold tracking-wider uppercase tech-font">Laboratório de Voz</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Miku-Synth Virtual</h2>
+                <div class="h-1 w-20 bg-miku mx-auto mt-4 rounded"></div>
+                <p class="text-slate-400 mt-4 text-sm sm:text-base">
+                    Sente o poder da síntese sonora. Toca nas teclas virtuais abaixo para gerar sons melódicos e escolhe vogais diferentes para ouvir a modulação robótica em tempo real!
+                </p>
+            </div>
+
+            <!-- Caixa do Sintetizador -->
+            <div class="max-w-4xl mx-auto bg-cybercard rounded-3xl border border-slate-800 p-6 sm:p-8 neon-glow-miku neon-border-miku">
+                
+                <!-- Ecrã Digital e Controlo Superior -->
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-8 items-center">
+                    <div class="md:col-span-5 bg-slate-950 border border-slate-800 p-4 rounded-xl flex items-center space-x-3">
+                        <div class="w-3 h-3 rounded-full bg-miku animate-ping"></div>
+                        <div class="tech-font text-sm text-miku">
+                            <div>SINAL: <span id="synth-status">PRONTO PARA SINTETIZAR</span></div>
+                            <div class="text-slate-500 text-xs mt-1">FREQUÊNCIA: <span id="synth-freq">0 Hz</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Escolha de Vogais -->
+                    <div class="md:col-span-4 flex justify-between bg-slate-900 border border-slate-800 p-2 rounded-xl">
+                        <button onclick="setVowel('ah')" id="vowel-ah" class="vowel-btn flex-1 py-2 text-xs font-bold text-cyberdark bg-miku rounded-lg transition-all">AH</button>
+                        <button onclick="setVowel('eh')" id="vowel-eh" class="vowel-btn flex-1 py-2 text-xs font-bold text-slate-400 hover:text-white transition-all">EH</button>
+                        <button onclick="setVowel('ih')" id="vowel-ih" class="vowel-btn flex-1 py-2 text-xs font-bold text-slate-400 hover:text-white transition-all">IH</button>
+                        <button onclick="setVowel('oh')" id="vowel-oh" class="vowel-btn flex-1 py-2 text-xs font-bold text-slate-400 hover:text-white transition-all">OH</button>
+                    </div>
+
+                    <!-- Tipo de Onda -->
+                    <div class="md:col-span-3 flex justify-between bg-slate-900 border border-slate-800 p-2 rounded-xl">
+                        <button onclick="setWave('sine')" id="wave-sine" class="wave-btn flex-1 py-2 text-xs font-bold text-miku transition-all"><i class="fa-solid fa-wave-square mr-1"></i>Sine</button>
+                        <button onclick="setWave('triangle')" id="wave-triangle" class="wave-btn flex-1 py-2 text-xs font-bold text-slate-400 hover:text-white transition-all"><i class="fa-solid fa-triangle-exclamation mr-1"></i>Tri</button>
+                    </div>
+                </div>
+
+                <!-- Teclado Musical -->
+                <div class="flex justify-center relative py-4 bg-slate-950 rounded-2xl border border-slate-800 overflow-x-auto select-none">
+                    <div class="flex relative h-64 w-[600px] min-w-[500px]">
+                        <!-- Teclas Brancas -->
+                        <button onmousedown="playTone(261.63)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">DÓ</span></button>
+                        <button onmousedown="playTone(293.66)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">RÉ</span></button>
+                        <button onmousedown="playTone(329.63)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">MI</span></button>
+                        <button onmousedown="playTone(349.23)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">FÁ</span></button>
+                        <button onmousedown="playTone(392.00)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">SOL</span></button>
+                        <button onmousedown="playTone(440.00)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">LÁ</span></button>
+                        <button onmousedown="playTone(493.88)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg border-r border-slate-300 relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">SI</span></button>
+                        <button onmousedown="playTone(523.25)" onmouseup="stopTone()" onmouseleave="stopTone()" class="key-white flex-1 bg-white hover:bg-slate-100 rounded-b-lg relative transition-all active:bg-miku/50 z-10" style="height: 100%"><span class="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] text-slate-500 font-bold">DÓ#</span></button>
+
+                        <!-- Teclas Pretas -->
+                        <button onmousedown="playTone(277.18)" onmouseup="stopTone()" onmouseleave="stopTone()" class="bg-slate-900 hover:bg-slate-800 rounded-b-md absolute z-20 transition-all active:bg-pink-500" style="width: 8%; height: 60%; left: 8.5%"></button>
+                        <button onmousedown="playTone(311.13)" onmouseup="stopTone()" onmouseleave="stopTone()" class="bg-slate-900 hover:bg-slate-800 rounded-b-md absolute z-20 transition-all active:bg-pink-500" style="width: 8%; height: 60%; left: 21%"></button>
+                        <!-- Espaço -->
+                        <button onmousedown="playTone(369.99)" onmouseup="stopTone()" onmouseleave="stopTone()" class="bg-slate-900 hover:bg-slate-800 rounded-b-md absolute z-20 transition-all active:bg-pink-500" style="width: 8%; height: 60%; left: 46%"></button>
+                        <button onmousedown="playTone(415.30)" onmouseup="stopTone()" onmouseleave="stopTone()" class="bg-slate-900 hover:bg-slate-800 rounded-b-md absolute z-20 transition-all active:bg-pink-500" style="width: 8%; height: 60%; left: 58.5%"></button>
+                        <button onmousedown="playTone(466.16)" onmouseup="stopTone()" onmouseleave="stopTone()" class="bg-slate-900 hover:bg-slate-800 rounded-b-md absolute z-20 transition-all active:bg-pink-500" style="width: 8%; height: 60%; left: 71%"></button>
+                    </div>
+                </div>
+
+                <div class="text-center text-xs text-slate-500 mt-6 flex items-center justify-center space-x-1">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span>Sons sintetizados usando moduladores de frequência avançados (LFO) para simulação de vibrato.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Leitor de Música (Mock Player com Ondas Dinâmicas) -->
+    <section id="player" class="py-20 bg-cyberdark border-t border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Informações e Teaser -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-pink-400 text-xs sm:text-sm font-semibold tracking-wider uppercase tech-font">Hits Lendários</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">Canções que Fizeram História</h2>
+                    <div class="h-1 w-20 bg-pink-500 rounded"></div>
+                    <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                        De clássicos do Rock a hinos do Pop eletrónico rápido, explora a discografia marcante gerada por produtores (Vocaloids Producers / P's) que consolidaram a cultura Miku globalmente.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-star text-pink-400"></i>
+                            <span><strong>World is Mine</strong> - ryo (supercell)</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-star text-pink-400"></i>
+                            <span><strong>Senbonzakura</strong> - Kurousa-P</span>
+                        </div>
+                        <div class="flex items-center space-x-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-star text-pink-400"></i>
+                            <span><strong>Melt</strong> - ryo (supercell)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O Leitor de Música Interativo -->
+                <div class="lg:col-span-7 bg-cybercard rounded-3xl border border-slate-800 p-6 neon-glow-pink">
+                    <div class="flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-6">
+                        
+                        <!-- Disco Rotativo -->
+                        <div class="relative">
+                            <div id="vinyl-disc" class="w-32 h-32 rounded-full bg-slate-950 border-4 border-slate-800 flex items-center justify-center relative animate-[spin_10s_linear_infinite] paused">
+                                <div class="w-12 h-12 rounded-full bg-pink-500 flex items-center justify-center">
+                                    <div class="w-3 h-3 rounded-full bg-cyberdark"></div>
+                                </div>
+                            </div>
+                            <div class="absolute -top-1 -right-1 w-6 h-6 bg-pink-400 rounded-full flex items-center justify-center text-cyberdark text-xs font-bold">
+                                ♫
+                            </div>
+                        </div>
+
+                        <!-- Metadados da Canção e Controlos -->
+                        <div class="flex-grow text-center sm:text-left w-full">
+                            <div class="text-xs text-miku font-semibold tech-font">REPRODUZINDO SIMULAÇÃO</div>
+                            <h3 id="current-song-title" class="text-2xl font-bold text-white mt-1">World is Mine</h3>
+                            <p id="current-song-artist" class="text-sm text-slate-400 mt-0.5">ryo (supercell) feat. Hatsune Miku</p>
+                            
+                            <!-- Barra de Progresso Simulado -->
+                            <div class="mt-4 bg-slate-900 h-2 rounded-full overflow-hidden relative cursor-pointer" onclick="clickProgressBar(event)" id="progress-container">
+                                <div id="music-progress" class="bg-gradient-to-r from-miku to-pink-500 h-full w-0 transition-all duration-100"></div>
+                            </div>
+                            <div class="flex justify-between text-xs text-slate-500 mt-1 tech-font">
+                                <span id="current-time">00:00</span>
+                                <span id="total-time">04:12</span>
+                            </div>
+
+                            <!-- Botões de Controlo -->
+                            <div class="flex justify-center sm:justify-start items-center space-x-6 mt-6">
+                                <button onclick="prevSong()" class="text-slate-400 hover:text-white text-lg transition-colors"><i class="fa-solid fa-backward-step"></i></button>
+                                <button onclick="toggleMusic()" id="play-btn" class="w-12 h-12 rounded-full bg-pink-500 hover:bg-pink-400 text-cyberdark text-xl flex items-center justify-center transition-all transform hover:scale-110">
+                                    <i class="fa-solid fa-play ml-1" id="play-icon"></i>
+                                </button>
+                                <button onclick="nextSong()" class="text-slate-400 hover:text-white text-lg transition-colors"><i class="fa-solid fa-forward-step"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canvas para o Visualizador Waveform -->
+                    <div class="mt-6 bg-slate-950 rounded-2xl p-4 border border-slate-800">
+                        <canvas id="visualizer-canvas" class="w-full h-24 bg-transparent"></canvas>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Secção Quiz Vocaloid -->
+    <section id="quiz" class="py-20 bg-slate-950 border-t border-slate-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-miku text-xs sm:text-sm font-semibold tracking-wider uppercase tech-font">Desafio de Fã</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-white mt-1">Quiz de Conhecimento</h2>
+                <div class="h-1 w-20 bg-miku mx-auto mt-4 rounded"></div>
+                <p class="text-slate-400 mt-4 text-sm sm:text-base">
+                    Testa os teus conhecimentos sobre a Miku, os produtores lendários e a história deste software!
+                </p>
+            </div>
+
+            <!-- Contentor do Jogo -->
+            <div class="bg-cybercard rounded-3xl border border-slate-800 p-6 sm:p-8 relative overflow-hidden">
+                <div id="quiz-intro" class="text-center py-8 space-y-6">
+                    <div class="w-20 h-20 rounded-full bg-miku/10 text-miku flex items-center justify-center text-4xl mx-auto">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Preparado para o teste?</h3>
+                        <p class="text-slate-400 text-sm mt-1">5 perguntas rápidas de múltipla escolha.</p>
+                    </div>
+                    <button onclick="startQuiz()" class="px-8 py-3 bg-miku hover:bg-miku/90 text-cyberdark font-bold rounded-xl transition-all shadow-md">
+                        Iniciar Quiz
+                    </button>
+                </div>
+
+                <!-- Painel de Perguntas -->
+                <div id="quiz-play" class="hidden space-y-6">
+                    <div class="flex justify-between items-center text-xs text-slate-500 font-semibold tech-font">
+                        <span>PERGUNTA: <span id="quiz-current-idx">1</span>/5</span>
+                        <span>PONTOS: <span id="quiz-score">0</span></span>
+                    </div>
+
+                    <!-- Progress bar -->
+                    <div class="w-full bg-slate-900 h-1.5 rounded-full overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-miku h-full w-1/5 transition-all duration-300"></div>
+                    </div>
+
+                    <h4 id="quiz-question-text" class="text-lg sm:text-xl font-bold text-white">
+                        Carregando pergunta...
+                    </h4>
+
+                    <!-- Botões de Opções -->
+                    <div class="grid grid-cols-1 gap-3" id="quiz-options">
+                        <!-- Gerado via JS -->
+                    </div>
+                </div>
+
+                <!-- Resultados Finais -->
+                <div id="quiz-results" class="hidden text-center py-8 space-y-6">
+                    <div id="quiz-icon-container" class="w-20 h-20 rounded-full bg-green-500/10 text-green-400 flex items-center justify-center text-4xl mx-auto">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-white">Quiz Terminado!</h3>
+                        <p class="text-slate-400 text-sm mt-1">Sua pontuação final é:</p>
+                        <p class="text-5xl font-extrabold text-miku mt-4 tech-font"><span id="quiz-final-score">0</span>/500</p>
+                    </div>
+                    <div id="quiz-feedback-text" class="text-slate-300 text-sm max-w-md mx-auto">
+                        Excelente resultado! Conheces muito bem os sintetizadores e a cultura pop à sua volta.
+                    </div>
+                    <button onclick="startQuiz()" class="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg transition-all text-xs font-semibold">
+                        Tentar Novamente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div class="flex items-center justify-center space-x-3">
+                <div class="w-8 h-8 rounded-lg bg-miku flex items-center justify-center text-cyberdark font-bold text-lg">
+                    V
+                </div>
+                <span class="text-lg font-bold tracking-wider text-white">VOCALOID<span class="text-miku font-light">SPACE</span></span>
+            </div>
+            <p class="text-slate-500 text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+                Um portal fã-site dedicado à celebração artística dos Vocaloids. VOCALOID é uma marca registada da Yamaha Corporation.
+            </p>
+            <div class="flex justify-center space-x-6 text-slate-500 text-sm">
+                <span class="hover:text-miku cursor-pointer transition-colors"><i class="fa-brands fa-github mr-1"></i>GitHub</span>
+                <span class="hover:text-miku cursor-pointer transition-colors"><i class="fa-brands fa-twitter mr-1"></i>Twitter</span>
+                <span class="hover:text-miku cursor-pointer transition-colors"><i class="fa-brands fa-youtube mr-1"></i>YouTube</span>
+            </div>
+            <p class="text-slate-600 text-xs">
+                © 2026 Portal Vocaloid. Criado para fins interativos e educacionais.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom Modals para Mensagens sem usar Alert() -->
+    <div id="custom-modal" class="fixed inset-0 z-50 bg-cyberdark/80 backdrop-blur-sm hidden items-center justify-center p-4">
+        <div class="bg-cybercard border border-slate-800 rounded-2xl max-w-sm w-full p-6 text-center space-y-4 shadow-2xl">
+            <div class="w-12 h-12 rounded-full bg-miku/10 text-miku flex items-center justify-center text-2xl mx-auto">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+            <h3 id="modal-title" class="text-lg font-bold text-white">Notificação</h3>
+            <p id="modal-desc" class="text-slate-400 text-sm leading-relaxed">Mensagem descritiva aqui...</p>
+            <button onclick="closeModal()" class="w-full py-2 bg-miku hover:bg-miku/90 text-cyberdark font-bold rounded-lg transition-all text-sm">
+                OK
+            </button>
+        </div>
+    </div>
+
+    <!-- Scripts de Interação -->
+    <script>
+        // Menu de Navegação Responsivo
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar nos links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Mensagens do Sistema (Sem alert())
+        function showMessage(title, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            const modal = document.getElementById('custom-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('custom-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Filtros de Vocaloids
+        function filterVocaloids(category) {
+            // Atualizar classes de botões activos
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-miku', 'text-cyberdark');
+                btn.classList.add('bg-slate-800', 'text-slate-300');
+            });
+            event.target.classList.remove('bg-slate-800', 'text-slate-300');
+            event.target.classList.add('bg-miku', 'text-cyberdark');
+
+            // Filtrar Cards
+            const cards = document.querySelectorAll('.vocaloid-card');
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else if (category === 'crypton' && card.dataset.company === 'crypton') {
+                    card.classList.remove('hidden');
+                } else if (category === 'internet' && card.dataset.company === 'internet') {
+                    card.classList.remove('hidden');
+                } else if (category === 'vocaloid2' && card.dataset.generation === 'vocaloid2') {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // --- SISTEMA WEB AUDIO API (MINI MIKU SYNTH) ---
+        let audioCtx = null;
+        let oscillator = null;
+        let gainNode = null;
+        let lfo = null;
+        let lfoGain = null;
+        let biquadFilter = null;
+
+        let currentVowel = 'ah';
+        let currentWaveType = 'sine';
+
+        // Mapeamentos de Frequências das vogais (Simulação de Filtro de Formantes)
+        const vowelFilters = {
+            'ah': { f1: 800, f2: 1200 },
+            'eh': { f1: 500, f2: 1800 },
+            'ih': { f1: 300, f2: 2200 },
+            'oh': { f1: 550, f2: 850 }
+        };
+
+        function initAudio() {
+            if (!audioCtx) {
+                // Instanciar o AudioContext
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        function setVowel(vowel) {
+            currentVowel = vowel;
+            document.querySelectorAll('.vowel-btn').forEach(btn => {
+                btn.classList.remove('bg-miku', 'text-cyberdark');
+                btn.classList.add('text-slate-400', 'hover:text-white');
+            });
+            document.getElementById(`vowel-${vowel}`).classList.add('bg-miku', 'text-cyberdark');
+            document.getElementById(`vowel-${vowel}`).classList.remove('text-slate-400', 'hover:text-white');
+
+            // Se o som estiver tocando, atualizar os formantes em tempo real
+            if (biquadFilter && audioCtx) {
+                biquadFilter.frequency.setValueAtTime(vowelFilters[vowel].f2, audioCtx.currentTime);
+            }
+        }
+
+        function setWave(wave) {
+            currentWaveType = wave;
+            document.querySelectorAll('.wave-btn').forEach(btn => {
+                btn.classList.remove('text-miku');
+                btn.classList.add('text-slate-400', 'hover:text-white');
+            });
+            document.getElementById(`wave-${wave}`).classList.add('text-miku');
+            document.getElementById(`wave-${wave}`).classList.remove('text-slate-400', 'hover:text-white');
+        }
+
+        function playTone(freq) {
+            initAudio();
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+
+            // Parar tom anterior se existir para evitar sobreposições desagradáveis
+            stopTone();
+
+            // Atualizar ecrã
+            document.getElementById('synth-status').innerText = "SINTETIZANDO...";
+            document.getElementById('synth-freq').innerText = `${freq.toFixed(1)} Hz`;
+
+            // Criar Oscilador de som básico
+            oscillator = audioCtx.createOscillator();
+            oscillator.type = currentWaveType;
+            oscillator.frequency.value = freq;
+
+            // Criar Filtro Bandpass para simular formantes vocais (Canto Sintético)
+            biquadFilter = audioCtx.createBiquadFilter();
+            biquadFilter.type = "bandpass";
+            // Frequência de pico depende da vogal escolhida
+            biquadFilter.frequency.value = vowelFilters[currentVowel].f2;
+            biquadFilter.Q.value = 4.0; // Pico ressonante para dar tom metálico
+
+            // GainNode para controlo de volume e envelope suave
+            gainNode = audioCtx.createGain();
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+            gainNode.gain.linearRampToValueAtTime(0.35, audioCtx.currentTime + 0.05); // Ataque suave
+
+            // Criar LFO (Oscilador de Baixa Frequência) para dar Vibrato natural de cantor
+            lfo = audioCtx.createOscillator();
+            lfoGain = audioCtx.createGain();
+            lfo.frequency.value = 6.0; // 6Hz (vibrato de balada)
+            lfoGain.gain.value = 10; // Intensidade do vibrato
+
+            // Ligar nós
+            lfo.connect(lfoGain);
+            lfoGain.connect(oscillator.frequency); // Modula a frequência do som principal
+
+            oscillator.connect(biquadFilter);
+            biquadFilter.connect(gainNode);
+            gainNode.connect(audioCtx.destination);
+
+            // Iniciar osciladores
+            lfo.start();
+            oscillator.start();
+        }
+
+        function stopTone() {
+            if (oscillator && gainNode && audioCtx) {
+                try {
+                    // Decaimento suave para não dar estalos nos alto-falantes
+                    const curTime = audioCtx.currentTime;
+                    gainNode.gain.cancelScheduledValues(curTime);
+                    gainNode.gain.setValueAtTime(gainNode.gain.value, curTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, curTime + 0.15); // Decaimento elegante
+                    
+                    const oscToStop = oscillator;
+                    const lfoToStop = lfo;
+                    setTimeout(() => {
+                        oscToStop.stop();
+                        lfoToStop.stop();
+                    }, 200);
+                } catch(e) {}
+                
+                oscillator = null;
+                lfo = null;
+            }
+            document.getElementById('synth-status').innerText = "ESPERA DE ENTRADA";
+        }
+
+
+        // --- SIMULADOR DE LEITOR DE MÚSICA COM VISUALIZADOR ---
+        const playlist = [
+            { title: "World is Mine", artist: "ryo (supercell) feat. Hatsune Miku", duration: 252 },
+            { title: "Senbonzakura", artist: "Kurousa-P feat. Hatsune Miku", duration: 245 },
+            { title: "Melt", artist: "ryo (supercell) feat. Hatsune Miku", duration: 247 },
+            { title: "PoPiPo", artist: "LamazeP feat. Hatsune Miku", duration: 182 }
+        ];
+
+        let currentSongIdx = 0;
+        let isPlaying = false;
+        let progressInterval = null;
+        let currentSeconds = 0;
+
+        const canvas = document.getElementById('visualizer-canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Configuração inicial das dimensões do canvas responsivo
+        function resizeCanvas() {
+            canvas.width = canvas.parentElement.clientWidth;
+            canvas.height = 96;
+            drawStaticVisualizer();
+        }
+        window.addEventListener('resize', resizeCanvas);
+        setTimeout(resizeCanvas, 500);
+
+        function drawStaticVisualizer() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'rgba(57, 197, 187, 0.1)';
+            const barWidth = 6;
+            const gap = 4;
+            const barCount = Math.floor(canvas.width / (barWidth + gap));
+            
+            for(let i = 0; i < barCount; i++) {
+                const height = 15 + Math.sin(i * 0.15) * 10;
+                ctx.fillRect(i * (barWidth + gap), canvas.height - height, barWidth, height);
+            }
+        }
+
+        // Animação Ativa de Ondas Dinâmicas (Simulando análise de frequências FFT)
+        let visualizerAnimFrame = null;
+        let animPhase = 0;
+
+        function animateVisualizer() {
+            if(!isPlaying) {
+                cancelAnimationFrame(visualizerAnimFrame);
+                drawStaticVisualizer();
+                return;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const barWidth = 4;
+            const gap = 3;
+            const barCount = Math.floor(canvas.width / (barWidth + gap));
+            animPhase += 0.08;
+
+            for(let i = 0; i < barCount; i++) {
+                // Cálculo de altura pseudo-aleatória sinusoidal para dar aspeto de áudio real tocando
+                let factor = Math.sin(i * 0.08 + animPhase) * Math.cos(i * 0.03 - animPhase * 0.5);
+                factor = Math.abs(factor);
+                const height = 10 + factor * (canvas.height - 20);
+
+                // Gradiente de cor do ciano ao rosa neon
+                const grad = ctx.createLinearGradient(0, canvas.height, 0, canvas.height - height);
+                grad.addColorStop(0, '#39C5BB');
+                grad.addColorStop(1, '#FFB7C5');
+
+                ctx.fillStyle = grad;
+                ctx.fillRect(i * (barWidth + gap), canvas.height - height, barWidth, height);
+            }
+
+            visualizerAnimFrame = requestAnimationFrame(animateVisualizer);
+        }
+
+        function formatTime(secs) {
+            const mins = Math.floor(secs / 60);
+            const remainingSecs = secs % 60;
+            return `${mins.toString().padStart(2, '0')}:${remainingSecs.toString().padStart(2, '0')}`;
+        }
+
+        function loadSong(idx) {
+            const song = playlist[idx];
+            document.getElementById('current-song-title').innerText = song.title;
+            document.getElementById('current-song-artist').innerText = song.artist;
+            document.getElementById('total-time').innerText = formatTime(song.duration);
+            
+            // Reiniciar progresso
+            currentSeconds = 0;
+            updateProgressBar();
+        }
+
+        function updateProgressBar() {
+            const song = playlist[currentSongIdx];
+            const percent = (currentSeconds / song.duration) * 100;
+            document.getElementById('music-progress').style.width = `${percent}%`;
+            document.getElementById('current-time').innerText = formatTime(currentSeconds);
+        }
+
+        function toggleMusic() {
+            const playIcon = document.getElementById('play-icon');
+            const vinyl = document.getElementById('vinyl-disc');
+
+            if (isPlaying) {
+                // Pausar
+                isPlaying = false;
+                playIcon.className = 'fa-solid fa-play ml-1';
+                vinyl.classList.add('paused');
+                clearInterval(progressInterval);
+            } else {
+                // Reproduzir
+                isPlaying = true;
+                playIcon.className = 'fa-solid fa-pause';
+                vinyl.classList.remove('paused');
+                
+                progressInterval = setInterval(() => {
+                    const song = playlist[currentSongIdx];
+                    if (currentSeconds < song.duration) {
+                        currentSeconds++;
+                        updateProgressBar();
+                    } else {
+                        nextSong();
+                    }
+                }, 1000);
+
+                animateVisualizer();
+            }
+        }
+
+        function clickProgressBar(e) {
+            const bar = document.getElementById('progress-container');
+            const rect = bar.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            const percentage = clickX / width;
+            
+            const song = playlist[currentSongIdx];
+            currentSeconds = Math.floor(percentage * song.duration);
+            updateProgressBar();
+        }
+
+        function prevSong() {
+            currentSongIdx = (currentSongIdx - 1 + playlist.length) % playlist.length;
+            loadSong(currentSongIdx);
+            if(isPlaying) {
+                animateVisualizer();
+            }
+        }
+
+        function nextSong() {
+            currentSongIdx = (currentSongIdx + 1) % playlist.length;
+            loadSong(currentSongIdx);
+            if(isPlaying) {
+                animateVisualizer();
+            }
+        }
+
+        // Carregar música inicial
+        loadSong(0);
+
+
+        // --- SISTEMA DO QUIZ INTERATIVO ---
+        const quizData = [
+            {
+                question: "Quem é o ilustrador oficial que desenhou o design original da Hatsune Miku?",
+                options: ["KEI", "iXima", "Tetsuya Nomura", "huke"],
+                correct: 0
+            },
+            {
+                question: "Qual é o item característico (ícone de meme) associado à Hatsune Miku?",
+                options: ["Laranja", "Alho-francês (Negi)", "Atum", "Banana"],
+                correct: 1
+            },
+            {
+                question: "Qual destas canções icónicas foi produzida por ryo (supercell)?",
+                options: ["Senbonzakura", "Melt", "Butterfly on Your Right Shoulder", "Sand Planet"],
+                correct: 1
+            },
+            {
+                question: "O que significa originalmente a palavra 'Hatsune' no nome Hatsune Miku?",
+                options: ["Primeiro Som", "Futura Canção", "Voz Linda", "Sussurro Digital"],
+                correct: 0
+            },
+            {
+                question: "Qual destas Vocaloids é nativamente bilingue (Japonês e Inglês)?",
+                options: ["MEIKO", "Kagamine Rin", "Megurine Luka", "Gumi"],
+                correct: 2
+            }
+        ];
+
+        let quizCurrentIdx = 0;
+        let quizScore = 0;
+
+        function startQuiz() {
+            quizCurrentIdx = 0;
+            quizScore = 0;
+            document.getElementById('quiz-intro').classList.add('hidden');
+            document.getElementById('quiz-results').classList.add('hidden');
+            document.getElementById('quiz-play').classList.remove('hidden');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const questionData = quizData[quizCurrentIdx];
+            document.getElementById('quiz-current-idx').innerText = quizCurrentIdx + 1;
+            document.getElementById('quiz-score').innerText = quizScore;
+            document.getElementById('quiz-question-text').innerText = questionData.question;
+
+            // Barra de progresso do quiz
+            const progress = ((quizCurrentIdx + 1) / quizData.length) * 100;
+            document.getElementById('quiz-progress-bar').style.width = `${progress}%`;
+
+            // Construir Opções
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            questionData.options.forEach((opt, idx) => {
+                const button = document.createElement('button');
+                button.className = "w-full text-left p-4 rounded-xl bg-slate-900 border border-slate-800 hover:border-miku hover:bg-miku/10 text-sm text-slate-300 transition-all flex justify-between items-center group";
+                button.innerHTML = `
+                    <span>${opt}</span>
+                    <i class="fa-solid fa-chevron-right text-slate-600 group-hover:text-miku transition-colors"></i>
+                `;
+                button.onclick = () => selectOption(idx);
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        function selectOption(selectedIdx) {
+            const questionData = quizData[quizCurrentIdx];
+            
+            // Verificar Resposta
+            if (selectedIdx === questionData.correct) {
+                quizScore += 100;
+                // Feedback visual ou de áudio simples se desejar
+            }
+
+            // Seguir para a próxima pergunta ou terminar
+            if (quizCurrentIdx < quizData.length - 1) {
+                quizCurrentIdx++;
+                showQuestion();
+            } else {
+                finishQuiz();
+            }
+        }
+
+        function finishQuiz() {
+            document.getElementById('quiz-play').classList.add('hidden');
+            document.getElementById('quiz-results').classList.remove('hidden');
+            document.getElementById('quiz-final-score').innerText = quizScore;
+
+            const iconContainer = document.getElementById('quiz-icon-container');
+            const feedbackText = document.getElementById('quiz-feedback-text');
+
+            if (quizScore >= 400) {
+                iconContainer.className = "w-20 h-20 rounded-full bg-green-500/10 text-green-400 flex items-center justify-center text-4xl mx-auto";
+                iconContainer.innerHTML = '<i class="fa-solid fa-trophy"></i>';
+                feedbackText.innerText = "Incrível! És um verdadeiro mestre de Vocaloid. Sabes tudo sobre Miku e o ecossistema musical!";
+            } else if (quizScore >= 200) {
+                iconContainer.className = "w-20 h-20 rounded-full bg-yellow-500/10 text-yellow-400 flex items-center justify-center text-4xl mx-auto";
+                iconContainer.innerHTML = '<i class="fa-solid fa-medal"></i>';
+                feedbackText.innerText = "Bom trabalho! Conheces as canções mais icónicas, mas ainda podes descobrir mais sobre os bastidores da comunidade.";
+            } else {
+                iconContainer.className = "w-20 h-20 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center text-4xl mx-auto";
+                iconContainer.innerHTML = '<i class="fa-solid fa-heart-crack"></i>';
+                feedbackText.innerText = "Não te preocupes! O universo Vocaloid é vasto e está sempre em expansão. Ouve mais alguns álbuns e tenta de novo!";
+            }
+        }
+    </script>
+</body>
+</html>
